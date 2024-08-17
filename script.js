@@ -45,7 +45,7 @@ window.onpopstate = function(event) {
     }
 };
 
-// Load the initial page based on URL hash
+
 document.addEventListener("DOMContentLoaded", function() {
     const page = window.location.hash.substring(1) || 'home';
     navigateTo(page);

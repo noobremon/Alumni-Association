@@ -1,4 +1,4 @@
-// script.js
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.querySelector('form');
@@ -9,5 +9,5 @@ document.addEventListener('DOMContentLoaded', function () {
         form.reset();
     });
 
-    // Additional JS functionalities can be added here
+   
 });
