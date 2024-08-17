@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to College</title>
+    <link rel="stylesheet" href="donate.css">
+</head>
+<body>
+    <header>
+        <h1>Donate to Our College</h1>
+        <nav>
+            <ul>
+                <li><a href="donatemain.html">Home</a></li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Donation Form</h2>
+            <form id="donation-form">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" required>
+                
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" required>
+                
+                <label for="amount">Donation Amount (Rs/-):</label>
+                <input type="number" id="amount" required>
+                
+                <label for="event">Select Event:</label>
+                <select id="event">
+                    <option value="general">College Welfare</option>
+                    <option value="event">College Events</option>
+                    <option value="event">Scholarship students</option>
+                </select>
+                
+                <button type="submit">Donate</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 College Alumni Association</p>
+    </footer>
+    <script src="donate.js"></script>
+</body>
+</html>
