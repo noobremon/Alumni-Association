@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Meetings - Students & Alumni</title>
+    <link rel="stylesheet" href="onlinemeet.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Online Meetings</h1>
+            <p>Stay connected with your peers and alumni through our scheduled online meetings.</p>
+        </header>
+
+        <section id="meeting-list">
+            <h2>Upcoming Meetings</h2>
+            <div id="meetings"></div>
+        </section>
+
+        <section id="add-meeting">
+            <h2>Add a New Meeting</h2>
+            <form id="meeting-form">
+                <label for="meeting-title">Meeting Title:</label>
+                <input type="text" id="meeting-title" required>
+                
+                <label for="meeting-description">Description:</label>
+                <textarea id="meeting-description" rows="4" required></textarea>
+
+                <label for="google-meet-link">Google Meet Link:</label>
+                <input type="url" id="google-meet-link" required>
+
+                <button type="submit">Add Meeting</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="onlinemeet.js"></script>
+</body>
+</html>
