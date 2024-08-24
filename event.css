@@ -60,11 +60,11 @@ html, body{
     transform: translateY(30px);
     transition: 0.5s all;
 }
-.card, .card2, .card3:hover .info{
+.card, .card2, card3:hover .info{
     opacity: 1;
     transform: translateY(0px);
 }
-.card, .card2, .card3 .info h1{
+.card, card2, .card3 .info h1{
     margin: 0 ;
 }
 .card, .card2, .card3 .info p{
