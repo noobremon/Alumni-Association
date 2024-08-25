@@ -4,7 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Meetings - Students & Alumni</title>
-    <link rel="stylesheet" href="../styles/onlinemeet.css">
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #ffffff;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #666;
+}
+
+section h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+#meeting-list {
+    margin-bottom: 40px;
+}
+
+#meetings {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.meeting {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;  
+    background-color: #fafafa;
+}
+
+.meeting h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.meeting p {
+    margin: 5px 0;
+}
+
+.meeting a {
+    color: #28a745;
+    text-decoration: none;
+}
+
+#add-meeting {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#meeting-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#meeting-form input, #meeting-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#meeting-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #5a98db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#meeting-form button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -35,6 +143,37 @@
         </section>
     </div>
 
-    <script src="../scripts/onlinemeet.js"></script>
+    <script>
+        document.getElementById('meeting-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const title = document.getElementById('meeting-title').value;
+    const description = document.getElementById('meeting-description').value;
+    const link = document.getElementById('google-meet-link').value;
+
+    const meetingDiv = document.createElement('div');
+    meetingDiv.className = 'meeting';
+
+    const meetingTitle = document.createElement('h3');
+    meetingTitle.textContent = title;
+
+    const meetingDescription = document.createElement('p');
+    meetingDescription.textContent = description;
+
+    const meetingLink = document.createElement('a');
+    meetingLink.href = link;
+    meetingLink.target = '_blank';
+    meetingLink.textContent = 'Join the Meeting';
+
+    meetingDiv.appendChild(meetingTitle);
+    meetingDiv.appendChild(meetingDescription);
+    meetingDiv.appendChild(meetingLink);
+
+    document.getElementById('meetings').appendChild(meetingDiv);
+
+    document.getElementById('meeting-form').reset();
+});
+
+    </script>
 </body>
 </html>

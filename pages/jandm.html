@@ -4,7 +4,101 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Job and Mentorship Portal</title>
-    <link rel="stylesheet" href="../styles/jandm.css">
+    <link rel="stylesheet" href="">
+    <style>
+        
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #008cba;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 20px;
+    margin: 10px auto;
+    max-width: 800px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.job-listing, .mentorship-listing {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #008cba;
+}
+
+button {
+    background-color: #38b7cb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #cc5858;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-top: 10px;
+}
+
+form input, form textarea {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    margin-top: 15px;
+}
+
+    </style>
 </head>
 <body>
     <header>
@@ -45,6 +139,21 @@
         <p>&copy; Job and Mentorship. All rights reserved.</p>
     </footer>
 
-    <script src="jandm.js"></script>
+    <script>
+        
+
+document.addEventListener('DOMContentLoaded', function () {
+    const form = document.querySelector('form');
+    
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('Message sent successfully!');
+        form.reset();
+    });
+
+   
+});
+
+    </script>
 </body>
 </html>
