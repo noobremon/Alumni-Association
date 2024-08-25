@@ -4,121 +4,204 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online Meetings - Students & Alumni</title>
-    <link rel="stylesheet" href="">
     <style>
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
-}
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #3471ae;
+            color: #343a40;
+            position: relative;
+        }
 
-.container {
-    max-width: 1200px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+        .video-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            object-fit: cover;
+            opacity: 1;
+        }
 
-header {
-    text-align: center;
-    margin-bottom: 30px;
-}
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color:#da79da;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #ffffff;
-}
+        .container:hover {
+            transform: scale(1.02);
+        }
 
-header p {
-    font-size: 1.2em;
-    color: #666;
-}
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background-image: url(/images/2.png);
+            background-size: 100% 100%;
+        }
 
-section h2 {
-    color: #333;
-    margin-bottom: 10px;
-}
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #011223;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-#meeting-list {
-    margin-bottom: 40px;
-}
+        header p {
+            font-size: 1.2em;
+            color: #011223;
+            animation: fadeIn 2.5s ease-in-out;
+        }
+        header h3{
+           color:#011223
+           }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-#meetings {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+        section h2 {
+            color: #333;
+            margin-bottom: 10px;
+            animation: slideIn 1.5s ease-in-out;
+        }
 
-.meeting {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;  
-    background-color: #fafafa;
-}
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
 
-.meeting h3 {
-    margin-top: 0;
-    color: #333;
-}
+        #meeting-list {
+            margin-bottom: 40px;
+        }
 
-.meeting p {
-    margin: 5px 0;
-}
+        #meetings {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
 
-.meeting a {
-    color: #28a745;
-    text-decoration: none;
-}
+        .meeting {
+            padding: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            background-color: rgba(248, 249, 250, 0.8);
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
 
-#add-meeting {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
+        .meeting:hover {
+            background-color: rgba(226, 230, 234, 0.8);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-#meeting-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
+        .meeting h3 {
+            margin-top: 0;
+            color: rgba(38, 41, 218, 0.9);
+        }
 
-#meeting-form input, #meeting-form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
+        .meeting p {
+            margin: 10px 0;
+        }
 
-#meeting-form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #5a98db;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
-}
+        .meeting a {
+            color: #28a745;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-#meeting-form button:hover {
-    background-color: #0056b3;
-}
+        .meeting a:hover {
+            text-decoration: underline;
+        }
 
+        #add-meeting {
+            padding: 20px;
+            background-color: #dc9bd9;
+            border-radius: 8px;
+            border: 1px solid #ced4da;
+            animation: slideInFromRight 1.5s ease-in-out;
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        #meeting-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        #meeting-form input, #meeting-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            box-sizing: border-box;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        #meeting-form input:focus, #meeting-form textarea:focus {
+            border-color: rgba(38, 41, 218, 0.9);
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        #meeting-form button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: rgb(135, 3, 126);
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        #meeting-form button:hover {
+            background-color: #b300a7;
+            transform: scale(1.02);
+        }
     </style>
 </head>
 <body>
+    <video class="video-bg" autoplay loop muted>
+        <source src="/images/1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="container">
         <header>
             <h1>Online Meetings</h1>
-            <p>Stay connected with your peers and alumni through our scheduled online meetings.</p>
+            <p> <h3>Stay connected with your peers and alumni through our scheduled online meetings.</h3></p>
         </header>
 
         <section id="meeting-list">
@@ -138,42 +221,41 @@ section h2 {
                 <label for="google-meet-link">Google Meet Link:</label>
                 <input type="url" id="google-meet-link" required>
 
-                <button type="submit">Add Meeting</button>
+                <button type="submit"><b>Add Meeting</b></button>
             </form>
         </section>
     </div>
 
     <script>
         document.getElementById('meeting-form').addEventListener('submit', function(event) {
-    event.preventDefault();
+            event.preventDefault();
 
-    const title = document.getElementById('meeting-title').value;
-    const description = document.getElementById('meeting-description').value;
-    const link = document.getElementById('google-meet-link').value;
+            const title = document.getElementById('meeting-title').value;
+            const description = document.getElementById('meeting-description').value;
+            const link = document.getElementById('google-meet-link').value;
 
-    const meetingDiv = document.createElement('div');
-    meetingDiv.className = 'meeting';
+            const meetingDiv = document.createElement('div');
+            meetingDiv.className = 'meeting';
 
-    const meetingTitle = document.createElement('h3');
-    meetingTitle.textContent = title;
+            const meetingTitle = document.createElement('h3');
+            meetingTitle.textContent = title;
 
-    const meetingDescription = document.createElement('p');
-    meetingDescription.textContent = description;
+            const meetingDescription = document.createElement('p');
+            meetingDescription.textContent = description;
 
-    const meetingLink = document.createElement('a');
-    meetingLink.href = link;
-    meetingLink.target = '_blank';
-    meetingLink.textContent = 'Join the Meeting';
+            const meetingLink = document.createElement('a');
+            meetingLink.href = link;
+            meetingLink.target = '_blank';
+            meetingLink.textContent = 'Join the Meeting';
 
-    meetingDiv.appendChild(meetingTitle);
-    meetingDiv.appendChild(meetingDescription);
-    meetingDiv.appendChild(meetingLink);
+            meetingDiv.appendChild(meetingTitle);
+            meetingDiv.appendChild(meetingDescription);
+            meetingDiv.appendChild(meetingLink);
 
-    document.getElementById('meetings').appendChild(meetingDiv);
+            document.getElementById('meetings').appendChild(meetingDiv);
 
-    document.getElementById('meeting-form').reset();
-});
-
+            document.getElementById('meeting-form').reset();
+        });
     </script>
 </body>
 </html>
