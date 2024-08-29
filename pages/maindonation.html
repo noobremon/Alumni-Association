@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Page</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(120deg, #2658d5 30%, #a6d2eb 100%);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background 0.5s ease-in-out;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 1000px;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .payment-info {
+            margin: 20px 0;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 220px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        form label {
+            display: block;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        form input[type="file"] {
+            display: block;
+            margin: 0 auto 20px;
+            padding: 10px;
+            width: 70%;
+            box-sizing: border-box;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            color: #555;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0,0.3);
+        }
+
+        form input[type="file"]::file-selector-button {
+            padding: 10px;
+            border: none;
+            background-color: #3f4fe4;
+            color: white;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease-in-out;
+           
+        }
+
+        form input[type="file"]::file-selector-button:hover {
+            background-color: #1b49d4;
+        }
+
+        button {
+            background-color: #383edc;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: background 0.3s ease-in-out;
+            box-shadow: 0 0 10px rgba(0, 0, 0,0.3);
+            
+        }
+
+        button:hover {
+            background-color: #0a044c;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #thankYouMessage, #pendingMessage {
+            margin-top: 20px;
+        }
+
+        #thankYouMessage h2, #pendingMessage h2 {
+            font-size: 1.8em;
+            color: #333;
+        }
+
+        #thankYouMessage p, #pendingMessage p {
+            font-size: 1.2em;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Donate For Our Association</h1>
+        <p>Please scan the QR code or use UPI to make your donation.</p>
+
+        <div class="payment-info">
+            <img src="/images/222.jpg" alt="QR Code" class="qr-code">
+            <p>UPI ID: rajarshidas729@okaxis</p>
+        </div>
+
+        <form id="paymentForm">
+            <label for="screenshot">Attach payment screenshot:</label>
+            <input type="file" id="screenshot" name="screenshot" accept="image/*" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('paymentForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            window.location.href = 'donatety.html';
+        });
+    </script>
+</body>
+</html>
