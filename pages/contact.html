@@ -4,12 +4,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us</title>
-    <link rel="stylesheet" href="../styles/contact.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, rgba(165, 151, 232, 0.8), rgba(55, 8, 157, 0.8)), url('background-video.mp4');
+            background-size: cover;
+            background-attachment: fixed;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .container {
+            padding: 50px;
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 36px;
+            animation: textGlow 1.5s infinite alternate;
+        }
+
+        @keyframes textGlow {
+            0% { text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff; }
+            100% { text-shadow: 0 0 20px #fff, 0 0 30px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 80px #ff00ff; }
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 18px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+
+        .social-btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .social-btn.facebook {
+            background: #3b5998;
+        }
+
+        .social-btn.twitter {
+            background: #1da1f2;
+        }
+
+        .social-btn.linkedin {
+            background: #0077b5;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+
+        #platform-content {
+            margin-top: 20px;
+            font-size: 30px;
+            min-height: 100px;
+            animation: fadeIn 1s ease-in-out;
+            font-family: cursive;
+        }
+
+        #dynamic-content {
+            font-size: 18px; 
+        }
+
+        #background-video {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            opacity: 0.9;
+        }
+    </style>
 </head>
 <body>
+   
+    <video id="background-video" autoplay muted loop>
+        <source src="/images/11.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <div class="container">
-        <h1>Contact Us</h1>
-        <p>We would love to hear from you! Connect with us on social media or send us a message.</p>
+        <h1 id="dynamic-heading">Contact Us</h1>
+        <p id="dynamic-paragraph">We would love to hear from you! Connect with us on social media or send us a message.</p>
         
         <div class="social-links">
             <a href="https://www.facebook.com/" onclick="showFacebook()" class="social-btn facebook">Facebook</a>
@@ -18,12 +122,60 @@
         </div>
 
         <div id="platform-content">
-            hehe
+            <div id="constant-content">hellooooooo welcome about us y contact us</div>
+            <div id="dynamic-content"> </div>
         </div>
-
-        
     </div>
 
-    <script src="../scripts/contact.js"></script>
+    <script>
+        const dynamicContent = document.getElementById('dynamic-content');
+
+        const dynamicMessages = [
+            "hellooooooooo",
+            "hiiiiiiiiiiiiii!",
+            "how are you",
+            "welcomeeeeeeeeee"
+        ];
+
+        let currentIndex = 0;
+        let paused = false;
+
+        function updateDynamicContent() {
+            if (!paused) {
+                currentIndex = (currentIndex + 1) % dynamicMessages.length;
+                dynamicContent.innerHTML = dynamicMessages[currentIndex];
+            }
+        }
+
+        setInterval(updateDynamicContent, 5000); 
+
+        dynamicContent.addEventListener('click', function() {
+            paused = !paused;
+        });
+
+        function showFacebook() {
+            document.getElementById('platform-content').innerHTML = `
+                <h2>Connect with us on Facebook</h2>
+                <p>Like our page and stay updated with our latest news!</p>
+                <iframe src="https://www.facebook.com" width="100%" height="300px"></iframe>
+            `;
+        }
+
+        function showTwitter() {
+            document.getElementById('platform-content').innerHTML = `
+                <h2>Follow us on Twitter</h2>
+                <p>Join the conversation and tweet with us!</p>
+                <iframe src="https://twitter.com" width="100%" height="300px"></iframe>
+            `;
+        }
+
+        function showLinkedin() {
+            document.getElementById('platform-content').innerHTML = `
+                <h2>Connect with us on LinkedIn</h2>
+                <p>Let's network and grow together!</p>
+                <iframe src="https://www.linkedin.com" width="100%" height="300px"></iframe>
+            `;
+        }
+    </script>
 </body>
 </html>

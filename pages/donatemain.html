@@ -4,7 +4,121 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>College Alumni Donations</title>
-    <link rel="stylesheet" href="../styles/donate.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #4a90e2, #9013fe);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 8px 15px;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background: #ffdd59;
+            color: #333;
+        }
+
+        main {
+            flex: 1;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        section {
+            max-width: 600px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+
+        .donate-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #ffdd59;
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        .donate-button:hover {
+            background: #ffc107;
+            transform: translateY(-3px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px 0;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+            font-size: 1em;
+        }
+    </style>
 </head>
 <body>
     <header>
