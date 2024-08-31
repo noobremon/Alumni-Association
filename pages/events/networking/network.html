@@ -1,12 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Student Alumni Network</title>
+    <link rel="stylesheet" href="network.css">
 </head>
+
 <body>
-    <h1>Networking Blog</h1>
-    <p>Fill this in Pragya</p>
+    <header>
+        <div class="container">
+            <h1>Student Alumni Network</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#members">Members</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section id="about" class="container">
+            <h2>About Us</h2>
+            <p>WELCOME to our ALUMNI NETWORKING PAGE.Stay connected with former classmates,access exclusive events and
+                grow your professional network.Connect with like-minded individuals,explore new opportunities and stay
+                updated on the latest trends in your fields!</p>
+        </section>
+        <section id="members" class="container">
+            <h2>Our Members</h2>
+            <div class="member-grid">
+                    <div class="member-card" style="color: brown; background-color: bisque; border-radius: 28px; border-color: black;">
+                    <img src="../../../images/student1.jpg" alt="Member Photo">
+                    <h3>RISHI PAUL</h3>
+                    <p>CSE 2023-27</p>
+                </div>
+                <div class="member-card" style="color: brown; background-color: bisque; border-radius: 28px; border-color: black;">
+                    <img src="../../../images/student1.jpg" alt="Member Photo">
+                    <h3>ANINDHYA</h3>
+                    <p>CSE 2023-27</p>
+                </div>
+                <!-- Add more members as needed -->
+            </div>
+        </section>
+        <section id="events" class="container">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li style="list-style:lower-latin">Annual Alumni Gathering </li>
+                <li style="list-style: lower-latin;">Career Development Workshop</li>
+                <!-- Add more events as needed -->
+            </ul>
+            <section id="jobs">
+                <h2>JOB BOARD</h2>
+                <ul id="joblists">
+                    <header>
+                        <h1>Select Your Option</h1>
+                    </header>
+
+                    <main>
+                        <form id="options-form">
+                            <fieldset>
+                                <legend>Choose an Option:</legend>
+                                <label for="options">
+                                    <select id="options" name="options">
+                                        <option value="" disabled selected>Select an option</option>
+                                        <option value="Option 1">Frontend Developer</option>
+                                        <option value="Option 2">Backend Developer</option>
+                                        <option value="Option 3">Full Stack Developer</option>
+                                        <option value="Option 4">AIML</option>
+                                        <option value="Option 5">UI/UX</option>
+                                        <option value="Option 6">Cybersecurity</option>
+                                    </select>
+
+
+                                </label>
+                                <button type="button" onclick="submitOption()">Submit</button>
+                            </fieldset>
+                        </form>
+                        </section>
+                        </main>
+                        <script src="network.js"></script>
+    <footer>
+        <div class="container">
+            <p>&#x1F393 ALUMNETWORK.COM</p>
+        </div>
+    </footer>
 </body>
+
 </html>
