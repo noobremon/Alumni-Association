@@ -44,6 +44,7 @@
             margin-bottom: 30px;
             background-image: url(/images/2.png);
             background-size: 100% 100%;
+            position: relative;
         }
 
         header h1 {
@@ -58,9 +59,32 @@
             color: #011223;
             animation: fadeIn 2.5s ease-in-out;
         }
-        header h3{
-           color:snow;
-           }
+
+        header h3 {
+            color: snow;
+        }
+
+        .home-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #2742ac;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            font-weight: bold;
+            
+        }
+
+        .home-btn:hover {
+            background-color: #150146;
+        }
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -134,11 +158,10 @@
         }
 
         .remove-btn {
-            font-size: 15px;
             position: absolute;
             top: 10px;
             right: 10px;
-            background-color: #ff0000;
+            background-color: #dc3545;
             color: white;
             border: none;
             border-radius: 5px;
@@ -148,7 +171,7 @@
         }
 
         .remove-btn:hover {
-            background-color: #cd7e86;
+            background-color: #c82333;
         }
 
         #add-meeting {
@@ -174,8 +197,6 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            font-size: 10px;
-            color: #000c77;
         }
 
         #meeting-form input, #meeting-form textarea {
@@ -222,7 +243,8 @@
     <div class="container">
         <header>
             <h1>Online Meetings</h1>
-            <p> <h3>Stay connected with your peers and alumni through our scheduled online meetings.</h3></p>
+            <p><h3>Stay connected with your peers and alumni through our scheduled online meetings.</h3></p>
+            <a href="/" class="home-btn">Home</a> 
         </header>
 
         <section id="meeting-list">
@@ -248,42 +270,98 @@
     </div>
 
     <script>
+        function saveMeeting(title, description, link) {
+            
+            let meetings = JSON.parse(localStorage.getItem('meetings')) || [];
+    
+           
+            meetings.push({ title, description, link });
+    
+           
+            localStorage.setItem('meetings', JSON.stringify(meetings));
+        }
+    
         document.getElementById('meeting-form').addEventListener('submit', function(event) {
             event.preventDefault();
-
+    
             const title = document.getElementById('meeting-title').value;
             const description = document.getElementById('meeting-description').value;
             const link = document.getElementById('google-meet-link').value;
-
+    
+           
+            saveMeeting(title, description, link);
+    
+           
             const meetingDiv = document.createElement('div');
             meetingDiv.className = 'meeting';
-
+    
             const meetingTitle = document.createElement('h3');
             meetingTitle.textContent = title;
-
+            meetingDiv.appendChild(meetingTitle);
+    
             const meetingDescription = document.createElement('p');
             meetingDescription.textContent = description;
-
+            meetingDiv.appendChild(meetingDescription);
+    
             const meetingLink = document.createElement('a');
             meetingLink.href = link;
-            meetingLink.target = '_blank';
-            meetingLink.textContent = 'Join the Meeting';
-
-            const removeButton = document.createElement('button');
-            removeButton.className = 'remove-btn';
-            removeButton.textContent = 'Remove Meeting';
-            removeButton.addEventListener('click', function() {
-                meetingDiv.remove();
-            });
-
-            meetingDiv.appendChild(meetingTitle);
-            meetingDiv.appendChild(meetingDescription);
+            meetingLink.textContent = 'Join Meeting';
             meetingDiv.appendChild(meetingLink);
-            meetingDiv.appendChild(removeButton);
-
+    
+           
+            const removeBtn = document.createElement('button');
+            removeBtn.className = 'remove-btn';
+            removeBtn.textContent = 'Remove';
+            removeBtn.addEventListener('click', function() {
+                meetingDiv.remove();
+    
+                let meetings = JSON.parse(localStorage.getItem('meetings')) || [];
+                meetings = meetings.filter(meeting => meeting.title !== title);
+                localStorage.setItem('meetings', JSON.stringify(meetings));
+            });
+            meetingDiv.appendChild(removeBtn);
+    
+           
             document.getElementById('meetings').appendChild(meetingDiv);
-
+    
+           
             document.getElementById('meeting-form').reset();
+        });
+    
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            let meetings = JSON.parse(localStorage.getItem('meetings')) || [];
+    
+            meetings.forEach(meeting => {
+                const meetingDiv = document.createElement('div');
+                meetingDiv.className = 'meeting';
+    
+                const meetingTitle = document.createElement('h3');
+                meetingTitle.textContent = meeting.title;
+                meetingDiv.appendChild(meetingTitle);
+    
+                const meetingDescription = document.createElement('p');
+                meetingDescription.textContent = meeting.description;
+                meetingDiv.appendChild(meetingDescription);
+    
+                const meetingLink = document.createElement('a');
+                meetingLink.href = meeting.link;
+                meetingLink.textContent = 'Join Meeting';
+                meetingDiv.appendChild(meetingLink);
+    
+                const removeBtn = document.createElement('button');
+                removeBtn.className = 'remove-btn';
+                removeBtn.textContent = 'Remove';
+                removeBtn.addEventListener('click', function() {
+                    meetingDiv.remove();
+    
+                    meetings = meetings.filter(m => m.title !== meeting.title);
+                    localStorage.setItem('meetings', JSON.stringify(meetings));
+                });
+                meetingDiv.appendChild(removeBtn);
+    
+                document.getElementById('meetings').appendChild(meetingDiv);
+            });
         });
     </script>
 </body>
