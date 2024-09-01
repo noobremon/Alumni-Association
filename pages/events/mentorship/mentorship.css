@@ -1,27 +1,37 @@
+/* Base styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     color: #333;
-    background-color:#e1b382;
+    background-color: #e1b382;
+    line-height: 1.6;
 }
 
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Header styles */
 header {
-    background-color:#2d545e;
+    background-color: #2d545e;
     color: #fff;
     padding: 15px 0;
 }
 
 header .container {
-    width: 90%;
-    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 header h1 {
     margin: 0;
+    font-size: 1.8em;
 }
 
 nav ul {
@@ -29,10 +39,11 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 10px 15px;
 }
 
 nav ul li a {
@@ -45,8 +56,9 @@ nav ul li a.active {
     border-bottom: 2px solid #fff;
 }
 
+/* Main content styles */
 main {
-    padding: 20px;
+    padding: 20px 0;
 }
 
 .hero {
@@ -59,10 +71,17 @@ main {
 .hero h2 {
     margin: 0;
     font-size: 2.5em;
+    color: rgb(106, 12, 12);
+    background-color: rgba(122, 78, 16, 0.71);
+    border-bottom-left-radius: 18px;
+    display: inline-block;
+    padding: 10px;
 }
 
 .hero p {
     font-size: 1.2em;
+    color: rgba(165, 42, 42, 0.797);
+    text-decoration: underline;
 }
 
 .details,
@@ -78,6 +97,7 @@ main {
     padding-bottom: 10px;
     margin-bottom: 20px;
     color: #0066cc;
+    text-align: center;
 }
 
 ul {
@@ -89,6 +109,7 @@ ul li {
     margin: 10px 0;
 }
 
+/* Form styles */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -115,6 +136,7 @@ form {
     padding: 10px;
     border: 1px solid #14842cb7;
     border-radius: 4px;
+    font-size: 16px;
 }
 
 .form-group textarea {
@@ -129,21 +151,68 @@ button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
     background-color: hwb(233 19% 26%);
 }
 
+/* Footer styles */
 footer {
-
     background-color: #ce89079c;
-    color: #2386cd00;
     padding: 15px 0;
     text-align: center;
 }
 
-footer .container {
-    width: 90%;
-    margin: 0 auto;
+footer p {
+    color: #ff414e;
+    margin: 0;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul li {
+        margin: 5px;
+    }
+
+    .hero h2 {
+        font-size: 1.8em;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea,
+    button {
+        font-size: 14px;
+    }
 }
