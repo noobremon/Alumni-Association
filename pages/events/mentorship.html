@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mentorship Program - Alumni Association</title>
+    <link rel="stylesheet" href="mentorship.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 style="font-family:'Times New Roman', Times, serif">AlumConnect.com</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Training and Resources</a></li>
+                    <li><a href="#" class="active">Mentorship Programs</a></li>
+                    <li><a href="#">Contact Details</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h2 style="color: rgb(106, 12, 12); background-color: rgba(122, 78, 16, 0.71); border-bottom-left-radius: 18px;">Mentorship Program</h2>
+                <p style="color: rgba(165, 42, 42, 0.797); text-decoration:underline;">Empowering the Students and recent Graduates through Mentorship from experienced alumni.</p>
+            </div>
+        </section>
+
+        <section class="details">
+            <div class="container">
+                <h3 style="text-align: center;">Get to know about our Mentorship Program</h3>
+                <p style="font-family: Arial, Helvetica, sans-serif ;"><strong>WELCOME to the ALUMCONNECT.COM Mentorship Page!</strong> </p>
+                <span id="element"></span>
+           </div>
+        </section>
+
+        <section class="benefits">
+            <div class="container">
+                <h3 style="text-align: center;">Why To Join?</h3>
+                <ul>
+                    <li type="square">Guidance and Support</li>
+                    <li type="square">Career Advancement</li>
+                    <li type="square">Personal Growth</li>
+                    <li type="square">Skill Development</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="application">
+            <div class="container">
+                <h3 style="text-align: center;">Apply Now</h3>
+                <p><strong>Interested in becoming a mentor or mentee? Please fill out the form below to get started!</strong></p>
+                <form action="submit_form.php" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="role">I would like to be a:</label>
+                        <select id="role" name="role" required>
+                            <option value="mentor">Mentor</option>
+                            <option value="mentee">Mentee</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Information:</label>
+                        <textarea id="message" name="message"></textarea>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p style="color: #ff414e;">&#127775; AlumConnect.com</p>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+          strings: ['<i>A mentorship program pairs individuals seeking guidance with experienced mentors who offer support and advice.These programs are designed to facilitate personal and professional growth by leveraging the expertise of the mentor'],
+          typeSpeed: 25,
+        });
+      </script>
+</body>
+</html>
