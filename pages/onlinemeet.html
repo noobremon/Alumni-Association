@@ -101,18 +101,18 @@
         }
 
         .meeting {
-    padding: 20px;
-    border: 1px solid #ced4da;
-    border-radius: 8px;
-    background-color: rgba(248, 249, 250, 0.5); /* Adjust the alpha value for transparency */
-    transition: background-color 0.3s, box-shadow 0.3s;
-}
+            padding: 20px;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+            background-color: rgba(248, 249, 250, 0.5);
+            transition: background-color 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
 
-.meeting:hover {
-    background-color: rgba(226, 230, 234, 0.5); /* Adjust the alpha value for transparency on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
+        .meeting:hover {
+            background-color: rgba(226, 230, 234, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
         .meeting h3 {
             margin-top: 0;
@@ -131,6 +131,24 @@
 
         .meeting a:hover {
             text-decoration: underline;
+        }
+
+        .remove-btn {
+            font-size: 15px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .remove-btn:hover {
+            background-color: #cd7e86;
         }
 
         #add-meeting {
@@ -156,6 +174,8 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
+            font-size: 10px;
+            color: #000c77;
         }
 
         #meeting-form input, #meeting-form textarea {
@@ -249,9 +269,17 @@
             meetingLink.target = '_blank';
             meetingLink.textContent = 'Join the Meeting';
 
+            const removeButton = document.createElement('button');
+            removeButton.className = 'remove-btn';
+            removeButton.textContent = 'Remove Meeting';
+            removeButton.addEventListener('click', function() {
+                meetingDiv.remove();
+            });
+
             meetingDiv.appendChild(meetingTitle);
             meetingDiv.appendChild(meetingDescription);
             meetingDiv.appendChild(meetingLink);
+            meetingDiv.appendChild(removeButton);
 
             document.getElementById('meetings').appendChild(meetingDiv);
 
