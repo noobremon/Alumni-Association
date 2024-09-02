@@ -27,7 +27,7 @@
             margin-top: 50px;
             background: rgba(0, 0, 0, 0.7);
             border-radius: 10px;
-            max-width: 500px;
+            max-width: 800px;
             margin-left: auto;
             margin-right: auto;
             backdrop-filter: blur(10px);
@@ -83,14 +83,17 @@
 
         #platform-content {
             margin-top: 20px;
-            font-size: 30px;
+            font-size: 16px;
             min-height: 100px;
             animation: fadeIn 1s ease-in-out;
             font-family: cursive;
         }
 
         #dynamic-content {
-            font-size: 18px; 
+            font-family: cursive;
+            font-size: 30px; 
+            color: #ff0000;
+            text-shadow: #bd9f0a;
         }
 
         #background-video {
@@ -122,7 +125,13 @@
         </div>
 
         <div id="platform-content">
-            <div id="constant-content">hellooooooo welcome about us y contact us</div>
+            <div id="constant-content">People will contact the alumni association through the website for various reasons, 
+                including seeking support with alumni-related inquiries, requesting information about upcoming events, or exploring
+                 opportunities to engage with the alumni community. They may need assistance with accessing resources, updating their
+                  personal information, or reconnecting with old classmates. Additionally, alumni might reach out to offer suggestions,
+                   provide feedback, or inquire about how they can contribute to the institution through volunteering, mentoring, or donations. 
+                Overall, contacting the association ensures they stay connected and informed while participating in meaningful ways 
+                within the alumni network.</div>
             <div id="dynamic-content"> </div>
         </div>
     </div>
@@ -131,10 +140,10 @@
         const dynamicContent = document.getElementById('dynamic-content');
 
         const dynamicMessages = [
-            "hellooooooooo",
-            "hiiiiiiiiiiiiii!",
-            "how are you",
-            "welcomeeeeeeeeee"
+            "Need help accessing alumni resources?",
+            "We're here to assist.....",
+            "Access valuable alumni resources with just a few clicks.",
+            "Reach out to us for any general questions or support you need."
         ];
 
         let currentIndex = 0;
