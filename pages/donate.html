@@ -59,7 +59,7 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            max-width: 400px;
+            max-width: 600px;
         }  
 
         section {
@@ -70,7 +70,8 @@
             text-align: center;
             width: 100%;
         }
-        h1{
+
+        h1 {
             text-align: top;
         }
 
@@ -78,19 +79,20 @@
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
-            margin-bottom: 20px;
         }
 
         label {
-            display: block;
+            text-align: left;
             margin: 10px 0;
             font-size: 1.2em;
             color: #f1f1f1;
-            text-align: center;
+            width: 150px;
+            margin-right: auto;
+            margin-left: auto;
         }
 
         input, select {
-            width: 100%;
+            width: calc(100% - 40px);
             padding: 10px;
             margin-bottom: 20px;
             border: none;
@@ -98,6 +100,9 @@
             font-size: 1em;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             transition: background 0.3s ease-in-out;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
         }
 
         input[type="text"], input[type="email"], input[type="number"], select {
@@ -141,8 +146,8 @@
 <body>
     <header>
         <h1>Donate to Our College</h1>
-     
     </header>
+    
     <main>
         <section>
             <h2>Donation Form</h2>
@@ -153,30 +158,65 @@
                 <label for="email">Your Email:</label>
                 <input type="email" id="email" required>
                 
-                <label for="amount">Donation Amount (Rs/-):</label>
-                <input type="number" id="amount" name="amount" min="10" max="1000000" required>
-                
                 <label for="event">Select Event:</label>
                 <select id="event">
+                    <option value="" disabled selected>Select Event</option>
+                    <option value="scholarship">Scholarship Students</option>
                     <option value="general">College Welfare</option>
                     <option value="event">College Events</option>
-                    <option value="scholarship">Scholarship Students</option>
+                    <option value="Projects">College Projects</option>
                 </select>
+                
+                <div id="project-details" style="display: none;">
+                    <label for="project-type">Select Project Type:</label>
+                    <select id="project-type" onchange="navigateToPage()">
+                        <option value="" disabled selected>Select Project Type</option>
+                        <option value="job.html">Sentiment Analysis</option>
+                        <option value="">Blockchain</option>
+                        <option value="">Cybersecurity</option>
+                        <option value="">Smart Education</option>
+                    </select>
+                </div>
+
+                <label for="amount">Donation Amount (Rs/-):</label>
+                <input type="number" id="amount" name="amount" min="10" max="1000000" required>
                 
                 <button type="submit">Donate</button>
             </form>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 College Alumni Association</p>
     </footer>
+
     <script>
+          function navigateToPage() {
+        var selectElement = document.getElementById('project-type');
+        var selectedValue = selectElement.value;
+        if (selectedValue) {
+            window.location.href = selectedValue;
+        }
+    }
+
+        const eventSelect = document.getElementById('event');
+        const projectDetails = document.getElementById('project-details');
+
+        eventSelect.addEventListener('change', function() {
+            if(eventSelect.value === 'Projects') {
+                projectDetails.style.display = 'block';
+            } else {
+                projectDetails.style.display = 'none';
+            }
+        });
+
         document.getElementById('donation-form').addEventListener('submit', function(event) {
             event.preventDefault(); 
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const amount = document.getElementById('amount').value;
             const eventType = document.getElementById('event').value;
+            const projectType = document.getElementById('project-type').value;
 
             window.location.href = 'maindonation.html';
         });
