@@ -3,7 +3,7 @@ body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     margin: 0;
     padding: 0;
-    background-color: #e100ff36;
+    background-color: #FEFAE0;
     line-height: 1.6;
 }
 
@@ -17,7 +17,7 @@ body {
 
 /* Header styles */
 header {
-    background: #b300929c;
+    background: #283618;
     color: rgba(247, 255, 20, 0.808);
     padding: 1em 0;
 }
@@ -34,6 +34,8 @@ header h1 {
     font-size: 1.8em;
 }
 
+
+
 nav ul {
     list-style: none;
     margin: 0;
@@ -48,7 +50,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #0021b3;
+    color:#FEFAE0;
     text-decoration: none;
     font-weight: bold;
 }
@@ -79,13 +81,13 @@ section {
 }
 
 .member-card {
-    background: #fff;
-    border: 1px solid #ddd;
+    background: #a83131a8;
+    border: 1px solid #a3060653;
     border-radius: 8px;
-    padding: 1em;
+    padding: 1rem;
     text-align: center;
-    color: brown;
-    background-color: bisque;
+    color: rgba(98, 47, 216, 0.571);
+    background-color: rgba(70, 75, 128, 0.797);
 }
 
 .member-card img {
@@ -116,7 +118,7 @@ form select {
 }
 
 form button {
-    background: #b3009bfb;
+    background: #DDA15E;
     color: #fff;
     padding: 0.8em;
     border: none;
@@ -127,13 +129,13 @@ form button {
 }
 
 form button:hover {
-    background: #661336;
+    background: #dd735e;
 }
 
 /* Footer styles */
 footer {
-    background: #9a1f63f9;
-    color: #37208cfa;
+    background: #DDA15E;
+    color: #001722;
     text-align: center;
     padding: 1em 0;
     position: relative;
