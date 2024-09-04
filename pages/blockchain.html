@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Projects</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+   
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.project {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #03ee1f;
+}
+
+h2 {
+    color: #555;
+}
+
+button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+button:first-child {
+    background-color: #28a745;
+    color: white;
+}
+
+button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Block Chain</h1>
+        <div class="project" id="project1">
+            <h2>Project 1: Network Security Analysis</h2>
+            <p>Team: Innovatiove Ninja<br>
+                Team Members: <br>1.                  <br>
+                              2.                       <br>
+                              3.                         <br>
+                              4.                          <br>
+                              5.                              <br>
+                              6.                              <br>
+            </p>
+            <p>Does this project need funding?</p>
+            <button onclick="redirectToPayment(true)">Yes</button>
+            <button onclick="redirectToPayment(false)">No</button>
+        </div>
+        
+        <div class="project" id="project2">
+            <h2>Project 2: Threat Detection System</h2>
+            <p>Team: Tech Titans<br>
+                Team Members: <br>1.                 <br>
+                              2.                  <br>
+                              3.                   <br>
+                              4.                     <br>
+                              5.                         <br>
+                              6.                      <br>
+            </p>
+            <p>Does this project need funding?</p>
+            <button onclick="redirectToPayment(true)">Yes</button>
+            <button onclick="redirectToPayment(false)">No</button>
+        </div>
+
+        
+    </div>
+
+    <script>
+function redirectToPayment(needsFunding) {
+    if (needsFunding) {
+        window.location.href = 'maindonation.html';
+    } else {
+        alert('No funding required.');
+    }
+}
+
+    </script>
+</body>
+</html>
