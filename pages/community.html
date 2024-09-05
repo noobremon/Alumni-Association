@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Portal</title>
+  
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1521c1, #4c79e3);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: url('https://source.unsplash.com/1600x900/?community') no-repeat center center fixed;
+            background-size: cover;
+            background-color: #007bff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;  
+        }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #6dd5ed, #2193b0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #555;
+            border-bottom: 2px solid #2193b0;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+        }
+
+        .post-form input, .post-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+            box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+            transition: border-color 0.3s ease;
+        }
+
+        .post-form input:focus, .post-form textarea:focus {
+            border-color: #2193b0;
+            outline: none;
+        }
+
+        .file-input-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+
+        .file-input-wrapper input {
+            display: none;
+        }
+
+        .file-input-wrapper label {
+            background-color: #007bff;
+            color: white;
+            padding: 12px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1em;
+        }
+
+        .file-input-wrapper label:hover {
+            background-color: #0056b3;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+        }
+
+        .post {
+            background: #fafafa;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .post:hover {
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .post img {
+            border-radius: 10px;
+            max-width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .reactions, .discussion {
+            margin-top: 10px;
+        }
+
+        .reactions button, .discussion button {
+            background-color: #007bff;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+            margin-right: 5px;
+            margin-top: 5px;
+        }
+
+        .reactions button:hover, .discussion button:hover {
+            background-color: #0056b3;
+        }
+
+        .discussion input {
+            width: 80%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Community Portal</h1>
+        
+        <div class="post-form">
+            <h2>Create a Post</h2>
+            <input type="text" id="name" class="form-control" placeholder="Your Name">
+            <input type="text" id="login-id" class="form-control" placeholder="Login ID">
+            <input type="text" id="post-title" class="form-control" placeholder="Title">
+            <div class="file-input-wrapper">
+                <label for="post-image"><i class="fas fa-plus">Add Images</i></label>
+                <input type="file" id="post-image" accept="image/*">
+            </div>
+            <textarea id="post-content" class="form-control" placeholder="Write something..."></textarea>
+            <button class="btn btn-success" onclick="addPost()">Post</button>
+        </div>
+        <br>
+        
+        <div class="posts-section">
+            <h2>Posts</h2>
+            <div id="posts"></div>
+        </div>
+    </div>
+
+   
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+function addPost() {
+    const name = document.getElementById('name').value;
+    const loginId = document.getElementById('login-id').value;
+    const title = document.getElementById('post-title').value;
+    const content = document.getElementById('post-content').value;
+    const imageInput = document.getElementById('post-image');
+    const imageFile = imageInput.files[0];
+
+    if (name && loginId && title && content) {
+        const postsDiv = document.getElementById('posts');
+
+        const postDiv = document.createElement('div');
+        postDiv.className = 'post';
+        
+        const postName = document.createElement('p');
+        postName.innerHTML = `<strong>Posted by:</strong> ${name} (${loginId})`;
+
+        const postTitle = document.createElement('h3');
+        postTitle.innerText = title;
+        
+        const postContent = document.createElement('p');
+        postContent.innerText = content;
+
+        postDiv.appendChild(postName);
+        postDiv.appendChild(postTitle);
+        postDiv.appendChild(postContent);
+
+        if (imageFile) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const postImage = document.createElement('img');
+                postImage.src = e.target.result;
+                postDiv.appendChild(postImage);
+
+                
+                appendReactionsAndDiscussion(postDiv);
+            };
+            reader.readAsDataURL(imageFile);
+        } else {
+           
+            appendReactionsAndDiscussion(postDiv);
+        }
+
+        postsDiv.appendChild(postDiv);
+    } else {
+        alert('Please fill out all fields.');
+    }
+}
+
+function appendReactionsAndDiscussion(postDiv) {
+    const reactionsDiv = document.createElement('div');
+    reactionsDiv.className = 'reactions';
+    reactionsDiv.innerHTML = `
+        <button class="btn btn-primary" onclick="react(this, 'like')">Like</button>
+        <button class="btn btn-primary" onclick="react(this, 'dislike')">Dislike</button>
+    `;
+
+    const discussionDiv = document.createElement('div');
+    discussionDiv.className = 'discussion';
+    discussionDiv.innerHTML = `
+        <input type="text" placeholder="Add a comment" class="form-control">
+        <button class="btn btn-primary">Comment</button>
+    `;
+
+    postDiv.appendChild(reactionsDiv);
+    postDiv.appendChild(discussionDiv);
+}
+
+function react(button, reactionType) {
+    if (reactionType === 'like') {
+        alert('You liked this post!');
+    } else {
+        alert('You disliked this post!');
+    }
+}
+    </script>
+</body>
+</html>
