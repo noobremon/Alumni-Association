@@ -1,6 +1,6 @@
-# 🎓 AlumConnect - RCCIIT Alumni Association Platform
+# 🎓 AlumConnect - SRM IST Alumni Association Platform
 
-> **Connecting Alumni, Empowering Futures** - A comprehensive digital platform designed to strengthen the bond between RCCIIT (RCC Institute of Information Technology) and its alumni community.
+> **Connecting Alumni, Empowering Futures** - A comprehensive digital platform designed to strengthen the bond between SRM IST (RCC Institute of Information Technology) and its alumni community.
 
 ## 📖 Table of Contents
 - [Overview](#overview)
@@ -794,7 +794,7 @@ This project is licensed under the **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2024 AlumConnect - RCCIIT Alumni Association
+Copyright (c) 2024 AlumConnect - SRM IST Alumni Association
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -831,19 +831,19 @@ SOFTWARE.
 
 **Project Maintainer:** [noobremon](https://github.com/noobremon)
 
-**Institution:** RCC Institute of Information Technology (RCCIIT)
+**Institution:** RCC Institute of Information Technology (SRM IST)
 
 **Hackathon:** Smart India Hackathon (SIH) 2024
 
 ### Get in Touch
 
 - 🌐 **Website:** [https://noobremon.github.io/Alumni-Association/](https://noobremon.github.io/Alumni-Association/)
-- 📧 **Email:** alumni@rcciit.edu.in
+- 📧 **Email:** alumni@srmist.edu.in
 - 💬 **GitHub Issues:** [Report a bug or request a feature](https://github.com/noobremon/Alumni-Association/issues)
 - 📱 **Social Media:** 
-  - Facebook: [RCCIIT Alumni](https://facebook.com/rcciitalumni)
-  - LinkedIn: [RCCIIT Alumni Network](https://linkedin.com/company/rcciit-alumni)
-  - Twitter: [@RCCIITAlumni](https://twitter.com/rcciitalumni)
+   - Facebook: [SRM IST Alumni](https://facebook.com/srmistalumni)
+   - LinkedIn: [SRM IST Alumni Network](https://linkedin.com/company/srmist-alumni)
+   - Twitter: [@SRMISTAlumni](https://twitter.com/srmistalumni)
 
 ### Support
 
@@ -858,7 +858,7 @@ For technical support or questions:
 
 Special thanks to:
 
-- **RCCIIT Faculty** for guidance and support
+- **SRM IST Faculty** for guidance and support
 - **Smart India Hackathon 2024** for the opportunity
 - **Bootstrap Team** for the amazing UI framework
 - **Font Awesome & Bootstrap Icons** for icon libraries
@@ -881,10 +881,10 @@ Special thanks to:
 
 <div align="center">
 
-**Made with ❤️ for the RCCIIT Alumni Community**
+**Made with ❤️ for the SRM IST Alumni Community**
 
 *Connecting Past, Present, and Future*
 
-[⬆ Back to Top](#-alumconnect---rcciit-alumni-association-platform)
+[⬆ Back to Top](#-alumconnect---srm-ist-alumni-association-platform)
 
 </div>

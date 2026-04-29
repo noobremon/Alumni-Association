@@ -1,7 +1,7 @@
 {
   "name": "alumni-association",
   "version": "1.0.0",
-  "description": "RCC RCCIIT Alumni Association - A platform connecting alumni, students, and professionals",
+  "description": "SRM IST Alumni Association - A platform connecting alumni, students, and professionals",
   "main": "index.html",
   "scripts": {
     "start": "npx http-server -p 8080",
@@ -15,7 +15,7 @@
     "donations",
     "mentorship"
   ],
-  "author": "RCCIIT Alumni Association",
+  "author": "SRM IST Alumni Association",
   "license": "MIT",
   "repository": {
     "type": "git",
