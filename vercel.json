@@ -1,47 +1,5 @@
 {
   "version": 2,
   "public": true,
-  "buildCommand": "echo 'Static site - no build required'",
-  "env": {},
-  "headers": [
-    {
-      "source": "/index.html",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/pages/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/images/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400, must-revalidate"
-        }
-      ]
-    },
-    {
-      "source": "/(style\\.css|script\\.js)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=86400, must-revalidate"
-        }
-      ]
-    }
-  ],
-  "cleanUrls": true,
-  "trailingSlash": false,
   "regions": ["auto"]
 }
