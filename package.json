@@ -1,0 +1,24 @@
+{
+  "name": "alumni-association",
+  "version": "1.0.0",
+  "description": "RCC RCCIIT Alumni Association - A platform connecting alumni, students, and professionals",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080",
+    "dev": "npx http-server -p 8080 -c-1"
+  },
+  "keywords": [
+    "alumni",
+    "association",
+    "networking",
+    "events",
+    "donations",
+    "mentorship"
+  ],
+  "author": "RCCIIT Alumni Association",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noobremon/Alumni-Association.git"
+  }
+}

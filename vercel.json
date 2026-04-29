@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "buildCommand": "echo 'No build command needed'",
+  "public": true,
+  "env": {},
+  "rewrites": [
+    {
+      "source": "/pages/(.*)",
+      "destination": "/pages/$1"
+    },
+    {
+      "source": "/images/(.*)",
+      "destination": "/images/$1"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
